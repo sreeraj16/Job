@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Smart Job Portal</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="navbar">
+  <div class="nav-left">
+    <a class="logo" href="index.html"><img src="assets/logo.svg" alt="Logo" width="28" height="28"> Smart Jobs</a>
+  </div>
+  <nav class="nav-links">
+    <a href="jobs.html">Jobs</a>
+    <button class="theme-btn" onclick="toggleTheme()">Toggle Theme</button>
+  </nav>
+</header>
+<section class="hero">
+  <div class="container hero-inner">
+    <div>
+      <h1>Find your next role or hire top talent</h1>
+      <p>Trusted by students, recruiters and admins to manage jobs and applications seamlessly.</p>
+      <div class="card" style="max-width:520px">
+        <h3 style="margin-top:0">Login / Register</h3>
+        <div class="form-row">
+          <select id="role" onchange="updateRoleFields()">
+            <option value="student">Student</option>
+            <option value="recruiter">Recruiter</option>
+            <option value="admin">Admin</option>
+          </select>
+          <input id="email" class="input" placeholder="Email">
+        </div>
+        <div class="form-row">
+          <input id="password" type="password" class="input" placeholder="Password">
+          <input id="name" class="input" placeholder="Full Name">
+        </div>
+        <div id="studentFields" class="form-row" style="display:grid">
+          <input id="skills" class="input" placeholder="Skills (comma separated)">
+        </div>
+        <div id="recruiterFields" class="form-row" style="display:none">
+          <input id="company" class="input" placeholder="Company Name">
+        </div>
+        <div style="display:flex;gap:10px;margin-top:10px">
+          <button class="btn" onclick="login()">Login</button>
+          <button class="btn outline" onclick="register()">Register</button>
+        </div>
+      </div>
+    </div>
+    <div><img src="assets/hero.svg" alt="Hero" style="width:100%"></div>
+  </div>
+</section>
+<footer class="footer">© 2025 Smart Jobs Portal</footer>
+<script src="js/ui.js"></script>
+<script src="js/data.js"></script>
+<script src="js/auth.js"></script>
+<script>updateRoleFields();</script>
+</body>
+</html>

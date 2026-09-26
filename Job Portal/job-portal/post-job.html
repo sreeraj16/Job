@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Post Job</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<input id="title" placeholder="Job Title">
+<input id="company" placeholder="Company">
+<button onclick="post()">Post Job</button>
+
+<script>
+function post(){
+let jobs=JSON.parse(localStorage.getItem("jobs"))||[];
+jobs.push({title:title.value,company:company.value});
+localStorage.setItem("jobs",JSON.stringify(jobs));
+alert("Job Posted");
+}
+</script>
+</body>
+</html>

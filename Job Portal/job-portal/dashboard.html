@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dashboard</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="app">
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <div class="logo">JobSphere</div>
+    <div class="nav">
+      <a class="active">Dashboard</a>
+      <a href="jobs.html">Jobs</a>
+      <a href="post-job.html" id="rec">Post Job</a>
+      <a href="admin.html" id="adm">Admin</a>
+      <a href="#" onclick="logout()">Logout</a>
+    </div>
+  </div>
+
+  <!-- MAIN -->
+  <div class="main">
+
+    <!-- TOP BAR -->
+     <div class="notify-header">
+  Notifications
+  <button onclick="clearAll()" style="float:right">Clear</button>
+</div>
+
+    <div class="topbar">
+      <input class="search" placeholder="Search jobs, companies...">
+      <div class="user">
+  <div class="bell" onclick="toggleNotify()">
+    🔔
+    <span class="badge" id="badge">0</span>
+  </div>
+  <div class="profile" onclick="toggleProfile()">
+  <div class="avatar" id="av"></div>
+  <div class="dropdown" id="profileMenu">
+    <a href="resume.html">My Resume</a>
+    <a href="#" onclick="logout()">Logout</a>
+  </div>
+</div>
+<span id="email"></span>
+
+
+    </div>
+
+    <!-- CONTENT -->
+    <div class="content">
+      <div class="section-title">Overview</div>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Total Jobs</h3>
+          <p id="jobs"></p>
+        </div>
+        <div class="card">
+          <h3>Applications</h3>
+          <p id="apps"></p>
+        </div>
+        <div class="card">
+          <h3>Saved Jobs</h3>
+          <p id="saved"></p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script src="js/guard.js"></script>
+<script src="js/dashboard.js"></script>
+<body>
+
+  <!-- your HTML layout here -->
+
+  <!-- 1️⃣ Notification system (must be first) -->
+  <script src="js/ui.js"></script>
+
+  <!-- 2️⃣ Auth guard -->
+  <script src="js/guard.js"></script>
+
+  <!-- 3️⃣ Page-specific logic -->
+  <script src="js/dashboard.js"></script>
+
+</body>
+
+</body>
+</html>
